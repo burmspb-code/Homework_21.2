@@ -32,11 +32,22 @@ html, body {
             background-color: #0d6efd !important;
             color: #fff !important;
         }
-        /* Стилизация блока формы под ваш образец */
+        /* Стилизация блока формы */
         .form-container {
             border: 1px solid #dee2e6;
             border-radius: 6px;
             padding: 25px;
             background-color: #ffffff;
             max-width: 460px;
+        }
+         /* Псевдоэлемент ::placeholder настраивает внешний вид подсказки */
+        .custom-placeholder::placeholder {
+            color: #6c757d;  /* Стандартный серый цвет */
+            opacity: 0.4;    /* Делает текст слегка заметным (40% видимости) */
+        }
+        /* Стилизация карточек товара */
+       .card {
+            max-width: 350px; /* Карточка не станет шире 300 пикселей */
+            margin-left: auto;   /* Центрируем карточку внутри её колонки */
+            margin-right: auto;  /* Центрируем карточку внутри её колонки */
         }
