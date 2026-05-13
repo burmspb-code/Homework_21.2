@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница - Главная с шаблоном Bootstrap 5</title>
+
+    <!-- CSS-стили подключение Bootstrap -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS-стили иконки подключение Bootstrap -->
+    <link href="static/bootstrap-icons-1.13.1/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Статические стили, адаптированные под Colab -->
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .static-wrapper {
+            width: 100%;
+        }
+        /* Статическая левая колонка меню */
+        .sidebar-col {
+            width: 240px;
+            background-color: #212529;
+            padding: 20px;
+            min-height: 800px; /* Фиксирует высоту, чтобы меню не обрезалось */
+        }
+        /* Статическая правая колонка контента */
+        .content-col {
+            background-color: #ffffff;
+            padding: 40px;
+        }
+        .nav-link {
+            color: rgba(255,255,255,.75);
+            padding: 10px 15px;
+            display: block;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #fff;
+            background-color: rgba(255,255,255,.1);
+        }
+        .nav-link.active {
+            background-color: #0d6efd !important;
+            color: #fff !important;
+        }
+        .card {
+            border-radius: 4px;
+            max-width: 240px; /* Уменьшенная аккуратная ширина карточек */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- СТАТИЧЕСКИЙ КОНТЕЙНЕР-ОБОЛОЧКА -->
+    <div class="static-wrapper">
+        <div class="d-flex">
+
+            <!-- ЛЕВАЯ КОЛОНКА: БОКОВОЕ МЕНЮ -->
+            <div class="sidebar-col">
+                <a href="#" class="d-flex align-items-center mb-3 text-white text-decoration-none">
+                    <i class="bi bi-bootstrap-fill me-2 fs-4"></i>
+                    <span class="fs-4 fw-semibold">Меню</span>
+                </a>
+                <hr class="text-white">
+
+                <!-- Пункты меню -->
+                <div class="mb-5">
+                    <a href="#" class="nav-link active mb-2"><i class="bi bi-house-door me-2"></i> Главная</a>
+                    <a href="#" class="nav-link mb-2"><i class="bi bi-grid me-2"></i> Категории</a>
+                    <a href="#" class="nav-link mb-2"><i class="bi bi-cart3 me-2"></i> Заказы</a>
+                    <a href="#" class="nav-link mb-2"><i class="bi bi-person-lines-fill me-2"></i> Контакты</a>
+                </div>
+
+                <hr class="text-white">
+
+                <!-- ВЫПАДАЮЩЕЕ МЕНЮ ПОЛЬЗОВАТЕЛЯ -->
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle me-2 fs-5"></i>
+                        <strong>Пользователь</strong>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser">
+                        <li><a class="dropdown-item py-2" href="#">Профиль</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item py-2" href="#">Выход</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ПРАВАЯ КОЛОНКА: ОСНОВНОЙ КОНТЕНТ -->
+            <div class="content-col flex-grow-1 text-center">
+                <div class="container-fluid">
+
+                    <!-- ЗАГОЛОВОК -->
+                    <h1 class="display-4 fw-normal text-body-emphasis mb-3">Главная</h1>
+                    <p class="fs-5 text-muted mb-5">Вы находитесь на сайте, предназначенном для продажи товаров.</p>
+
+                    <!-- СЕТКА КАРТОЧЕК С ТОВАРАМИ (3 в ряд на ПК) -->
+                    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+                        <!-- КАРТОЧКА 1 -->
+                        <div class="col d-flex justify-content-center">
+                            <div class="card w-100 shadow-sm">
+                                <div class="card-header py-3 bg-body-tertiary">
+                                    <h4 class="my-0 fw-normal">Товар 1</h4>
+                                </div>
+                                <div class="card-body p-4">
+                                    <h1 class="card-title pricing-card-title mb-4">$ 100</h1>
+                                    <ul class="list-unstyled mt-3 mb-4 text-start text-muted lh-sm fs-7">
+                                        <li class="mb-2">10 users included, 2 GB of storage,</li>
+                                        <li>Email support, Help center access</li>
+                                    </ul>
+                                    <button type="button" class="w-100 btn btn-lg btn-outline-primary mt-4">Купить</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- КАРТОЧКА 2 -->
+                        <div class="col d-flex justify-content-center">
+                            <div class="card w-100 shadow-sm">
+                                <div class="card-header py-3 bg-body-tertiary">
+                                    <h4 class="my-0 fw-normal">Товар 2</h4>
+                                </div>
+                                <div class="card-body p-4">
+                                    <h1 class="card-title pricing-card-title mb-4">$ 200</h1>
+                                    <ul class="list-unstyled mt-3 mb-4 text-start text-muted lh-sm fs-7">
+                                        <li class="mb-2">20 users included, 10 GB of storage,</li>
+                                        <li>Priority email support, Help center access</li>
+                                    </ul>
+                                    <button type="button" class="w-100 btn btn-lg btn-outline-primary mt-4">Купить</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- КАРТОЧКА 3 -->
+                        <div class="col d-flex justify-content-center">
+                            <div class="card w-100 shadow-sm">
+                                <div class="card-header py-3 bg-body-tertiary">
+                                    <h4 class="my-0 fw-normal">Товар 3</h4>
+                                </div>
+                                <div class="card-body p-4">
+                                    <h1 class="card-title pricing-card-title mb-4">$ 300</h1>
+                                    <ul class="list-unstyled mt-3 mb-4 text-start text-muted lh-sm fs-7">
+                                        <li class="mb-2">30 users included, 50 GB of storage,</li>
+                                        <li>Phone support, Help center access</li>
+                                    </ul>
+                                    <button type="button" class="w-100 btn btn-lg btn-outline-primary mt-4">Купить</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- Конец row -->
+                </div>
+            </div>
+
+        </div> <!-- Конец d-flex -->
+    </div> <!-- Конец static-wrapper -->
+
+    <!-- Подключение Bootstrap 5 JS для работы выпадающего меню -->
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
