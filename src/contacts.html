@@ -64,27 +64,27 @@
                         <!-- ЛЕВАЯ ЧАСТЬ: ФОРМА ОБРАТНОЙ СВЯЗИ -->
                         <div class="col-md-6 d-flex justify-content-md-end justify-content-center">
                             <div class="form-container w-100">
-                                <form>
+                                <form action="/submit-form" method="POST">
                                     <!-- Поле Имя -->
                                     <div class="mb-3">
                                         <label for="inputName" class="form-label text-secondary small fw-semibold">Имя</label>
-                                        <input type="text" placeholder="Введите имя" class="form-control form-control-lg bg-body-tertiary border custom-placeholder" id="inputName">
+                                        <input type="text" name="username" placeholder="Введите имя" class="form-control form-control-lg bg-body-tertiary border custom-placeholder" id="inputName">
                                     </div>
 
                                     <!-- Поле Почта -->
                                     <div class="mb-3">
                                         <label for="inputEmail" class="form-label text-secondary small fw-semibold">Почта</label>
-                                        <input type="email" placeholder="Введите почту" class="form-control form-control-lg bg-body-tertiary border custom-placeholder" id="inputEmail">
+                                        <input type="email" name="email" placeholder="Введите почту" class="form-control form-control-lg bg-body-tertiary border custom-placeholder" id="inputEmail">
                                     </div>
 
                                     <!-- Поле Сообщение -->
                                     <div class="mb-4">
                                         <label for="inputMessage" class="form-label text-secondary small fw-semibold">Сообщение</label>
-                                        <textarea placeholder="Добавьте сообщение" class="form-control bg-body-tertiary border custom-placeholder" id="inputMessage" rows="4"></textarea>
+                                        <textarea name="message" placeholder="Добавьте сообщение" class="form-control bg-body-tertiary border custom-placeholder" id="inputMessage" rows="4"></textarea>
                                     </div>
 
                                     <!-- Прозрачная кнопка Отправить -->
-                                    <button type="submit" formaction="404.html" class="btn btn-outline-primary px-4 py-2 fw-semibold" >Отправить</button>
+                                    <button type="submit" class="btn btn-outline-primary px-4 py-2 fw-semibold" >Отправить</button>
                                 </form>
                             </div>
                         </div>
